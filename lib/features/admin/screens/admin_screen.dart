@@ -5,6 +5,7 @@ import 'package:amazon_clone_tutorial/features/admin/screens/posts_screen.dart';
 import 'package:flutter/material.dart';
 
 class AdminScreen extends StatefulWidget {
+  static const String routeName = '/admin-screen';
   const AdminScreen({Key? key}) : super(key: key);
 
   @override
