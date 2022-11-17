@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const adminRouter = require("./routes/admin");
+const cors = require("cors");
 // IMPORTS FROM OTHER FILES
 const authRouter = require("./routes/auth");
 const productRouter = require("./routes/product");
@@ -11,9 +12,10 @@ const userRouter = require("./routes/user");
 const PORT = process.env.PORT || 3000;
 const app = express();
 const DB =
-  "mongodb+srv://rivaan:rivaan123@cluster0.wpyhk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://se_ecommerce:GJaQizfn23tYpULs@cluster0.zzpvs6t.mongodb.net/?retryWrites=true&w=majority";
 
 // middleware
+app.use(cors());
 app.use(express.json());
 app.use(authRouter);
 app.use(adminRouter);
