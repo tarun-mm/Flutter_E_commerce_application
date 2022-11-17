@@ -47,4 +47,4 @@ app.*.map.json
 
 
 # Node modules in server
-server/node_modules
+/server/node_modules
