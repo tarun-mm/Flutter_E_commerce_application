@@ -61,11 +61,16 @@ class _AuthScreenState extends State<AuthScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Welcome',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.w500,
+              const Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 64),
+                  child: Text(
+                    'Hey there, Welcome',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
                 ),
               ),
               ListTile(
@@ -119,6 +124,7 @@ class _AuthScreenState extends State<AuthScreen> {
                               signUpUser();
                             }
                           },
+                          color: const Color.fromRGBO(254, 216, 19, 1),
                         )
                       ],
                     ),
@@ -170,6 +176,7 @@ class _AuthScreenState extends State<AuthScreen> {
                               signInUser();
                             }
                           },
+                          color: const Color.fromRGBO(254, 216, 19, 1),
                         )
                       ],
                     ),

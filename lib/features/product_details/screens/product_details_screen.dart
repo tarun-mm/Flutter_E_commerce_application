@@ -1,5 +1,6 @@
 import 'package:amazon_clone_tutorial/common/widgets/custom_button.dart';
 import 'package:amazon_clone_tutorial/common/widgets/stars.dart';
+import 'package:amazon_clone_tutorial/constants/utils.dart';
 import 'package:amazon_clone_tutorial/features/product_details/services/product_details_services.dart';
 import 'package:amazon_clone_tutorial/providers/user_provider.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -10,6 +11,8 @@ import 'package:amazon_clone_tutorial/features/search/screens/search_screen.dart
 import 'package:amazon_clone_tutorial/models/product.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
+
+import '../../address/screens/address_screen.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   static const String routeName = '/product-details';
@@ -51,6 +54,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   }
 
   void addToCart() {
+    showSnackBar(context, 'Added to Cart');
     productDetailsServices.addToCart(
       context: context,
       product: widget.product,
@@ -218,7 +222,14 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               padding: const EdgeInsets.all(10),
               child: CustomButton(
                 text: 'Buy Now',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    AddressScreen.routeName,
+                    arguments: widget.product.price.toString(),
+                  );
+                },
+                color: const Color.fromRGBO(254, 216, 19, 1),
               ),
             ),
             const SizedBox(height: 10),
