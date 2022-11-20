@@ -1,4 +1,4 @@
-import 'package:amazon_clone_tutorial/features/admin/models/sales.dart';
+import 'package:SE_Project_ECommerce/features/admin/models/sales.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 

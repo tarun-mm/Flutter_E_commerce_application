@@ -1,10 +1,10 @@
-import 'package:amazon_clone_tutorial/common/widgets/bottom_bar.dart';
-import 'package:amazon_clone_tutorial/constants/global_variables.dart';
-import 'package:amazon_clone_tutorial/features/admin/screens/admin_screen.dart';
-import 'package:amazon_clone_tutorial/features/auth/screens/auth_screen.dart';
-import 'package:amazon_clone_tutorial/features/auth/services/auth_service.dart';
-import 'package:amazon_clone_tutorial/providers/user_provider.dart';
-import 'package:amazon_clone_tutorial/router.dart';
+import 'package:SE_Project_ECommerce/common/widgets/bottom_bar.dart';
+import 'package:SE_Project_ECommerce/constants/global_variables.dart';
+import 'package:SE_Project_ECommerce/features/admin/screens/admin_screen.dart';
+import 'package:SE_Project_ECommerce/features/auth/screens/auth_screen.dart';
+import 'package:SE_Project_ECommerce/features/auth/services/auth_service.dart';
+import 'package:SE_Project_ECommerce/providers/user_provider.dart';
+import 'package:SE_Project_ECommerce/router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

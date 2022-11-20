@@ -1,4 +1,4 @@
-import 'package:amazon_clone_tutorial/models/user.dart';
+import 'package:SE_Project_ECommerce/models/user.dart';
 import 'package:flutter/material.dart';
 
 class UserProvider extends ChangeNotifier {

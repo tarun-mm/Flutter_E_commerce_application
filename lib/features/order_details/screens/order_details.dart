@@ -1,9 +1,9 @@
-import 'package:amazon_clone_tutorial/common/widgets/custom_button.dart';
-import 'package:amazon_clone_tutorial/constants/global_variables.dart';
-import 'package:amazon_clone_tutorial/features/admin/services/admin_services.dart';
-import 'package:amazon_clone_tutorial/features/search/screens/search_screen.dart';
-import 'package:amazon_clone_tutorial/models/order.dart';
-import 'package:amazon_clone_tutorial/providers/user_provider.dart';
+import 'package:SE_Project_ECommerce/common/widgets/custom_button.dart';
+import 'package:SE_Project_ECommerce/constants/global_variables.dart';
+import 'package:SE_Project_ECommerce/features/admin/services/admin_services.dart';
+import 'package:SE_Project_ECommerce/features/search/screens/search_screen.dart';
+import 'package:SE_Project_ECommerce/models/order.dart';
+import 'package:SE_Project_ECommerce/providers/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';

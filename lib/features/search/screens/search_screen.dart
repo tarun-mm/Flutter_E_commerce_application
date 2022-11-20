@@ -1,10 +1,10 @@
-import 'package:amazon_clone_tutorial/common/widgets/loader.dart';
-import 'package:amazon_clone_tutorial/constants/global_variables.dart';
-import 'package:amazon_clone_tutorial/features/home/widgets/address_box.dart';
-import 'package:amazon_clone_tutorial/features/product_details/screens/product_details_screen.dart';
-import 'package:amazon_clone_tutorial/features/search/services/search_services.dart';
-import 'package:amazon_clone_tutorial/features/search/widget/searched_product.dart';
-import 'package:amazon_clone_tutorial/models/product.dart';
+import 'package:SE_Project_ECommerce/common/widgets/loader.dart';
+import 'package:SE_Project_ECommerce/constants/global_variables.dart';
+import 'package:SE_Project_ECommerce/features/home/widgets/address_box.dart';
+import 'package:SE_Project_ECommerce/features/product_details/screens/product_details_screen.dart';
+import 'package:SE_Project_ECommerce/features/search/services/search_services.dart';
+import 'package:SE_Project_ECommerce/features/search/widget/searched_product.dart';
+import 'package:SE_Project_ECommerce/models/product.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatefulWidget {

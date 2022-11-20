@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:amazon_clone_tutorial/constants/error_handling.dart';
-import 'package:amazon_clone_tutorial/constants/global_variables.dart';
-import 'package:amazon_clone_tutorial/constants/utils.dart';
-import 'package:amazon_clone_tutorial/models/product.dart';
-import 'package:amazon_clone_tutorial/providers/user_provider.dart';
+import 'package:SE_Project_ECommerce/constants/error_handling.dart';
+import 'package:SE_Project_ECommerce/constants/global_variables.dart';
+import 'package:SE_Project_ECommerce/constants/utils.dart';
+import 'package:SE_Project_ECommerce/models/product.dart';
+import 'package:SE_Project_ECommerce/providers/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;

@@ -1,7 +1,7 @@
-import 'package:amazon_clone_tutorial/constants/global_variables.dart';
-import 'package:amazon_clone_tutorial/features/admin/screens/analtyics_screen.dart';
-import 'package:amazon_clone_tutorial/features/admin/screens/orders_screen.dart';
-import 'package:amazon_clone_tutorial/features/admin/screens/posts_screen.dart';
+import 'package:SE_Project_ECommerce/constants/global_variables.dart';
+import 'package:SE_Project_ECommerce/features/admin/screens/analtyics_screen.dart';
+import 'package:SE_Project_ECommerce/features/admin/screens/orders_screen.dart';
+import 'package:SE_Project_ECommerce/features/admin/screens/posts_screen.dart';
 import 'package:flutter/material.dart';
 
 class AdminScreen extends StatefulWidget {
