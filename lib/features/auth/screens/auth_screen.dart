@@ -59,17 +59,22 @@ class _AuthScreenState extends State<AuthScreen> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Center(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 64),
-                  child: Text(
-                    'Hey there, Welcome',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w800,
-                    ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8, 32, 8, 8),
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  width: 256,
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.fromLTRB(8, 16, 8, 64),
+                child: Text(
+                  'Hey there, Welcome',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w800,
                   ),
                 ),
               ),

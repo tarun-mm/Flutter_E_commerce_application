@@ -60,19 +60,9 @@ class _DealOfDayState extends State<DealOfDay> {
                     Container(
                       padding: const EdgeInsets.only(left: 15),
                       alignment: Alignment.topLeft,
-                      child: const Text(
-                        '\$500',
-                        style: TextStyle(fontSize: 18),
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.topLeft,
-                      padding:
-                          const EdgeInsets.only(left: 15, top: 5, right: 40),
-                      child: const Text(
-                        'Rivaan',
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
+                      child: Text(
+                        '\$${product!.price}',
+                        style: const TextStyle(fontSize: 18),
                       ),
                     ),
                     SingleChildScrollView(
@@ -89,18 +79,6 @@ class _DealOfDayState extends State<DealOfDay> {
                               ),
                             )
                             .toList(),
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 15,
-                      ).copyWith(left: 15),
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        'See all deals',
-                        style: TextStyle(
-                          color: Colors.cyan[800],
-                        ),
                       ),
                     ),
                   ],

@@ -52,36 +52,6 @@ class _AddressScreenState extends State<AddressScreen> {
     cityController.dispose();
   }
 
-  // void onApplePayResult(res) {
-  //   if (Provider.of<UserProvider>(context, listen: false)
-  //       .user
-  //       .address
-  //       .isEmpty) {
-  //     addressServices.saveUserAddress(
-  //         context: context, address: addressToBeUsed);
-  //   }
-  //   addressServices.placeOrder(
-  //     context: context,
-  //     address: addressToBeUsed,
-  //     totalSum: double.parse(widget.totalAmount),
-  //   );
-  // }
-
-  // void onGooglePayResult(res) {
-  //   if (Provider.of<UserProvider>(context, listen: false)
-  //       .user
-  //       .address
-  //       .isEmpty) {
-  //     addressServices.saveUserAddress(
-  //         context: context, address: addressToBeUsed);
-  //   }
-  //   addressServices.placeOrder(
-  //     context: context,
-  //     address: addressToBeUsed,
-  //     totalSum: double.parse(widget.totalAmount),
-  //   );
-  // }
-
   void payPressed(String addressFromProvider) {
     addressToBeUsed = "";
 
@@ -90,23 +60,27 @@ class _AddressScreenState extends State<AddressScreen> {
         pincodeController.text.isNotEmpty ||
         cityController.text.isNotEmpty;
 
-    if (isForm) {
-      if (_addressFormKey.currentState!.validate()) {
-        addressToBeUsed =
-            '${flatBuildingController.text}, ${areaController.text}, ${cityController.text} - ${pincodeController.text}';
-        addressServices.saveUserAddress(
-            context: context, address: addressToBeUsed);
+    if (isForm && _addressFormKey.currentState!.validate()) {
+      addressToBeUsed =
+          '${flatBuildingController.text}, ${areaController.text}, ${cityController.text} - ${pincodeController.text}';
+      addressServices.saveUserAddress(
+          context: context, address: addressToBeUsed);
 
-        addressServices.placeOrder(
-          context: context,
-          address: addressToBeUsed,
-          totalSum: double.parse(widget.totalAmount),
-        );
-      } else {
-        throw Exception('Please enter all the values!');
-      }
+      addressServices.placeOrder(
+        context: context,
+        address: addressToBeUsed,
+        totalSum: double.parse(widget.totalAmount),
+      );
     } else if (addressFromProvider.isNotEmpty) {
       addressToBeUsed = addressFromProvider;
+      addressServices.saveUserAddress(
+          context: context, address: addressToBeUsed);
+
+      addressServices.placeOrder(
+        context: context,
+        address: addressToBeUsed,
+        totalSum: double.parse(widget.totalAmount),
+      );
     } else {
       showSnackBar(context, 'ERROR');
     }
@@ -135,28 +109,22 @@ class _AddressScreenState extends State<AddressScreen> {
               if (address.isNotEmpty)
                 Column(
                   children: [
-                    GestureDetector(
-                      child: Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.black,
-                          ),
+                    Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.black,
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            address,
-                            style: const TextStyle(
-                              fontSize: 18,
-                            ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          address,
+                          style: const TextStyle(
+                            fontSize: 18,
                           ),
                         ),
                       ),
-                      onTap: () {
-                        var address = context.watch<UserProvider>().user.address;
-                        
-                      },
                     ),
                     const SizedBox(height: 20),
                     const Text(
@@ -200,31 +168,6 @@ class _AddressScreenState extends State<AddressScreen> {
                 onTap: () => payPressed(address),
                 color: const Color.fromRGBO(254, 216, 19, 1),
               ),
-              // ApplePayButton(
-              //   width: double.infinity,
-              //   style: ApplePayButtonStyle.whiteOutline,
-              //   type: ApplePayButtonType.buy,
-              //   paymentConfigurationAsset: 'applepay.json',
-              //   onPaymentResult: onApplePayResult,
-              //   paymentItems: paymentItems,
-              //   margin: const EdgeInsets.only(top: 15),
-              //   height: 50,
-              //   onPressed: () => payPressed(address),
-              // ),
-              // const SizedBox(height: 10),
-              // GooglePayButton(
-              //   onPressed: () => payPressed(address),
-              //   paymentConfigurationAsset: 'gpay.json',
-              //   onPaymentResult: onGooglePayResult,
-              //   paymentItems: paymentItems,
-              //   height: 50,
-              //   style: GooglePayButtonStyle.black,
-              //   type: GooglePayButtonType.buy,
-              //   margin: const EdgeInsets.only(top: 15),
-              //   loadingIndicator: const Center(
-              //     child: CircularProgressIndicator(),
-              //   ),
-              // ),
             ],
           ),
         ),
